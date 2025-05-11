@@ -1,15 +1,33 @@
 import React from 'react';
-import { Card, ListGroup, Container } from 'react-bootstrap';
+import { Card, ListGroup, Container, Button } from 'react-bootstrap';
 import { useUser } from '../context/UserContext';
+import { Link } from 'react-router-dom';
 
 function UserProfile() {
   const { firebaseUser, currentUser, loading } = useUser();
 
-  if (loading) return <Container className="mt-4"><p>Loading...</p></Container>;
-  if (!firebaseUser || !currentUser) {
+  if (loading) {
+    return (
+      <Container className="mt-4">
+        <p>Loading...</p>
+      </Container>
+    );
+  }
+
+  if (!firebaseUser) {
     return (
       <Container className="mt-4">
         <h3 className="text-danger">🔒 Please log in to view your profile.</h3>
+      </Container>
+    );
+  }
+
+  if (!currentUser) {
+    return (
+      <Container className="mt-4">
+        <h3 className="text-warning">⚠️ Profile not set up</h3>
+        <p>You are logged in as <strong>{firebaseUser.email}</strong>, but you haven't set up your profile yet.</p>
+        <Button as={Link} to="/edit-profile" variant="primary">Go to Edit Profile</Button>
       </Container>
     );
   }
