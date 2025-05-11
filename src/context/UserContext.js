@@ -6,9 +6,9 @@ import { getUserProfile } from '../utils/firebaseHelpers';
 const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
-  const [firebaseUser, setFirebaseUser] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null); // profilo da Firestore
-  const [loading, setLoading] = useState(true);
+  const [firebaseUser, setFirebaseUser] = useState(null);        // utente loggato (email, uid)
+  const [currentUser, setCurrentUser] = useState(null);          // profilo salvato su Firestore
+  const [loading, setLoading] = useState(true);                  // carica i dati del profilo
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -17,7 +17,7 @@ export const UserProvider = ({ children }) => {
 
       if (user) {
         const profile = await getUserProfile(user.uid);
-        setCurrentUser(profile);
+        setCurrentUser(profile || null); // se non esiste ancora, null
       } else {
         setCurrentUser(null);
       }
@@ -33,12 +33,19 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ firebaseUser, currentUser, logout, loading }}>
+    <UserContext.Provider value={{
+      firebaseUser,
+      currentUser,
+      setCurrentUser, // 👈 IMPORTANTE: serve per aggiornare il profilo dopo edit
+      loading,
+      logout
+    }}>
       {children}
     </UserContext.Provider>
   );
 };
 
 export const useUser = () => useContext(UserContext);
+
 
 

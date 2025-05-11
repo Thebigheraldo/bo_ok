@@ -4,7 +4,7 @@ import { useUser } from '../context/UserContext';
 import { saveUserProfile, getUserProfile } from '../utils/firebaseHelpers';
 
 function EditProfile() {
-  const { firebaseUser } = useUser();
+  const { firebaseUser, currentUser, setCurrentUser } = useUser();
   const [profile, setProfile] = useState({
     name: '',
     bio: '',
@@ -50,8 +50,10 @@ function EditProfile() {
   const handleSave = async () => {
     try {
       await saveUserProfile(firebaseUser.uid, profile);
-      setMessage('✅ Profile saved!');
+      setCurrentUser(profile); // 🔄 aggiorna subito il contesto
+      setMessage('✅ Profile saved successfully!');
     } catch (err) {
+      console.error(err);
       setMessage('❌ Error saving profile.');
     }
   };
@@ -96,7 +98,7 @@ function EditProfile() {
             value={newGenre}
             placeholder="Add genre"
             onChange={(e) => setNewGenre(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleAddGenre()}
+            onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddGenre())}
           />
           <Button className="mt-2" onClick={handleAddGenre}>Add Genre</Button>
         </Form.Group>
@@ -110,7 +112,7 @@ function EditProfile() {
             value={newBook}
             placeholder="Add book"
             onChange={(e) => setNewBook(e.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && handleAddBook()}
+            onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddBook())}
           />
           <Button className="mt-2" onClick={handleAddBook}>Add Book</Button>
         </Form.Group>
@@ -122,3 +124,4 @@ function EditProfile() {
 }
 
 export default EditProfile;
+
