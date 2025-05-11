@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Container, Navbar, Nav, Button } from 'react-bootstrap';
+
 import Home from './pages/Home';
-import UserProfile from './pages/UserProfile.js';
-import Matchmaking from './pages/MatchMaking.js';
+import UserProfile from './pages/UserProfile';
+import Matchmaking from './pages/MatchMaking';
 import BookJournal from './pages/BookJournal';
 import ReadingChallenges from './pages/ReadingChallenges';
 import Community from './pages/Community';
 import Recommendations from './pages/Recommendations';
+import EditProfile from './pages/EditProfile';
+
+import AuthModal from './components/AuthModal';
+import { useUser } from './context/UserContext';
 
 function App() {
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const { firebaseUser, logout } = useUser();
+
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -25,8 +33,21 @@ function App() {
               <Nav.Link as={Link} to="/challenges">Challenges</Nav.Link>
               <Nav.Link as={Link} to="/community">Community</Nav.Link>
               <Nav.Link as={Link} to="/recommendations">Suggestions</Nav.Link>
+              <Nav.Link as={Link} to="/edit-profile">Edit Profile</Nav.Link>
+
             </Nav>
-            <Button variant="outline-light">Login</Button>
+            {firebaseUser ? (
+              <>
+                <span className="text-light me-2">👋 {firebaseUser.email}</span>
+                <Button variant="outline-light" onClick={logout}>
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <Button variant="outline-light" onClick={() => setShowAuthModal(true)}>
+                Login
+              </Button>
+            )}
           </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -39,7 +60,10 @@ function App() {
         <Route path="/challenges" element={<ReadingChallenges />} />
         <Route path="/community" element={<Community />} />
         <Route path="/recommendations" element={<Recommendations />} />
+        <Route path="/edit-profile" element={<EditProfile />} />
       </Routes>
+
+      <AuthModal show={showAuthModal} handleClose={() => setShowAuthModal(false)} />
     </Router>
   );
 }

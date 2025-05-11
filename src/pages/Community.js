@@ -3,9 +3,8 @@ import { Container, Form, Button, Card } from 'react-bootstrap';
 import { useUser } from '../context/UserContext';
 
 function Community() {
-  const { currentUser } = useUser();
+  const { firebaseUser, currentUser, loading } = useUser();
   const storageKey = 'community_posts';
-
   const [message, setMessage] = useState('');
   const [posts, setPosts] = useState([]);
 
@@ -18,8 +17,8 @@ function Community() {
 
   const handlePost = () => {
     const newPost = {
-      user: currentUser.name,
-      userId: currentUser.id,
+      user: currentUser.name || firebaseUser.email,
+      uid: firebaseUser.uid,
       text: message,
       date: new Date().toLocaleString(),
     };
@@ -29,6 +28,15 @@ function Community() {
     localStorage.setItem(storageKey, JSON.stringify(updatedPosts));
     setMessage('');
   };
+
+  if (loading) return <Container className="mt-4"><p>Loading...</p></Container>;
+  if (!firebaseUser || !currentUser) {
+    return (
+      <Container className="mt-4">
+        <h3 className="text-danger">🔒 Please log in to access the community.</h3>
+      </Container>
+    );
+  }
 
   return (
     <Container className="mt-4">
@@ -69,3 +77,4 @@ function Community() {
 }
 
 export default Community;
+

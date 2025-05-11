@@ -3,16 +3,17 @@ import { Container, Form, Button, Card } from 'react-bootstrap';
 import { useUser } from '../context/UserContext';
 
 function BookJournal() {
-  const { currentUser } = useUser();
-  const storageKey = `journal_${currentUser.id}`;
-
+  const { firebaseUser, currentUser, loading } = useUser();
+  const storageKey = `journal_${firebaseUser?.uid}`;
   const [entry, setEntry] = useState('');
   const [savedEntries, setSavedEntries] = useState([]);
 
   useEffect(() => {
-    const data = localStorage.getItem(storageKey);
-    if (data) setSavedEntries(JSON.parse(data));
-  }, [storageKey]);
+    if (firebaseUser) {
+      const data = localStorage.getItem(storageKey);
+      if (data) setSavedEntries(JSON.parse(data));
+    }
+  }, [firebaseUser]);
 
   const handleSave = () => {
     const newEntries = [...savedEntries, { text: entry, date: new Date().toLocaleString() }];
@@ -21,10 +22,18 @@ function BookJournal() {
     setEntry('');
   };
 
+  if (loading) return <Container className="mt-4"><p>Loading...</p></Container>;
+  if (!firebaseUser || !currentUser) {
+    return (
+      <Container className="mt-4">
+        <h3 className="text-danger">🔒 Please log in to access your journal.</h3>
+      </Container>
+    );
+  }
+
   return (
     <Container className="mt-4">
       <h2>📓 {currentUser.name}'s Book Journal</h2>
-
       <Form className="mt-3">
         <Form.Group>
           <Form.Label>New Entry</Form.Label>
@@ -39,9 +48,7 @@ function BookJournal() {
           Save Entry
         </Button>
       </Form>
-
       <hr />
-
       <h4 className="mt-4">Previous Entries</h4>
       {savedEntries.length === 0 && <p>No journal entries yet.</p>}
       {savedEntries.map((e, idx) => (
@@ -59,3 +66,5 @@ function BookJournal() {
 }
 
 export default BookJournal;
+
+

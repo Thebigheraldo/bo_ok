@@ -4,14 +4,16 @@ import challenges from '../data/challenges';
 import { useUser } from '../context/UserContext';
 
 function ReadingChallenges() {
-  const { currentUser } = useUser();
-  const storageKey = `challenges_${currentUser.id}`;
+  const { firebaseUser, currentUser, loading } = useUser();
+  const storageKey = `challenges_${firebaseUser?.uid}`;
   const [progress, setProgress] = useState({});
 
   useEffect(() => {
-    const saved = localStorage.getItem(storageKey);
-    if (saved) setProgress(JSON.parse(saved));
-  }, [storageKey]);
+    if (firebaseUser) {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) setProgress(JSON.parse(saved));
+    }
+  }, [firebaseUser]);
 
   const toggleChallenge = (id) => {
     const updated = {
@@ -21,6 +23,15 @@ function ReadingChallenges() {
     setProgress(updated);
     localStorage.setItem(storageKey, JSON.stringify(updated));
   };
+
+  if (loading) return <Container className="mt-4"><p>Loading...</p></Container>;
+  if (!firebaseUser || !currentUser) {
+    return (
+      <Container className="mt-4">
+        <h3 className="text-danger">🔒 Please log in to access Challenges.</h3>
+      </Container>
+    );
+  }
 
   const completedPoints = challenges.reduce((sum, c) => (
     progress[c.id] ? sum + c.points : sum
@@ -32,7 +43,6 @@ function ReadingChallenges() {
       <p>
         Progress: <Badge bg="success">{completedPoints} pts</Badge>
       </p>
-
       <Row>
         {challenges.map(ch => (
           <Col md={6} key={ch.id} className="mb-3">
@@ -61,3 +71,5 @@ function ReadingChallenges() {
 }
 
 export default ReadingChallenges;
+
+
