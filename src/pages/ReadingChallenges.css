@@ -1,0 +1,83 @@
+.challenges-wrapper {
+    background-color: #f9f4ef;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .challenges-box {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .challenges-box h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .description {
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .add-challenge {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .add-challenge input {
+    flex: 1;
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    background: #fdfdfd;
+  }
+  
+  .add-challenge button {
+    background-color: #9376E0;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+  }
+  
+  .add-challenge button:hover {
+    background-color: #7c63c7;
+  }
+  
+  .challenge-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .challenge-item {
+    background-color: #eeeaf3;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .challenge-item h4 {
+    margin-bottom: 0.3rem;
+  }
+  
+  progress {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+  }
+  
+  .no-challenge {
+    font-style: italic;
+    color: #999;
+  }
+  

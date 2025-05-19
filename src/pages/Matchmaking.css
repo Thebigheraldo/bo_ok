@@ -1,0 +1,55 @@
+.matchmaking-wrapper {
+    background-color: #f9f4ef;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .matchmaking-box {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .matchmaking-box h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .description {
+    margin-bottom: 2rem;
+    color: #555;
+  }
+  
+  .match-card {
+    background-color: #eeeaf3;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .match-card h4 {
+    margin-bottom: 0.3rem;
+    color: #444;
+  }
+  
+  .match-card button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #9376E0;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .match-card button:hover {
+    background-color: #7c63c7;
+  }
+  

@@ -1,0 +1,129 @@
+/* Stile base */
+.navbar {
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .navbar-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #9376E0;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+  }
+  
+  /* Overlay sfondo */
+  .navbar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+  }
+  
+  .navbar-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  /* Slideout menu */
+  .navbar-slideout {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .navbar-slideout.open {
+    left: 0;
+  }
+  
+  /* Voci di menu */
+  .navbar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0 0 0; /* aumenta qui per abbassare le voci */
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  
+  .navbar-menu li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444;
+    transition: color 0.2s;
+  }
+  
+  .navbar-menu li a:hover {
+    color: #9376E0;
+  }
+  
+  /* Area auth */
+  .navbar-auth {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  
+  .user-email {
+    font-size: 0.95rem;
+    color: #333;
+  }
+  
+  .btn-login,
+  .btn-logout {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: #9376E0;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .btn-login:hover,
+  .btn-logout:hover {
+    background-color: #7b63c7;
+  }
+  .navbar-slideout {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 260px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 4rem; /* spazio per il logo */
+    padding-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+      
+  

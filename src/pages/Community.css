@@ -1,0 +1,66 @@
+.community-wrapper {
+    background-color: #f9f4ef;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .community-box {
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .community-box h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .description {
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 1rem;
+    background: #fdfdfd;
+  }
+  
+  button {
+    padding: 0.6rem 1.2rem;
+    background-color: #9376E0;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+  }
+  
+  button:hover {
+    background-color: #7c63c7;
+  }
+  
+  .community-feed {
+    border-top: 1px solid #ddd;
+    padding-top: 1rem;
+  }
+  
+  .community-post {
+    background-color: #eeeaf3;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  

@@ -1,0 +1,99 @@
+/* EditProfile.css */
+
+.edit-profile-wrapper {
+    background-color: #f9f4ef;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .edit-profile-box {
+    width: 100%;
+    max-width: 650px;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .edit-profile-box h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+    font-size: 1.6rem;
+  }
+  
+  .edit-profile-box label {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  .edit-profile-box input[type="text"],
+  .edit-profile-box textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: #f9f8f6;
+  }
+  
+  .edit-profile-box textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  
+  .edit-profile-box button {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #9376E0;
+    color: #fff;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .edit-profile-box button:hover {
+    background-color: #7c63c7;
+  }
+  
+  .saved-msg {
+    margin-top: 1rem;
+    color: green;
+    font-weight: 500;
+  }
+  
+  .tag-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .tag-item {
+    background-color: #eeeaf3;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  
+  .remove-tag {
+    cursor: pointer;
+    color: #b04141;
+    font-weight: bold;
+  }
+  
+  

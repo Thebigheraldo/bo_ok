@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    background-color: #fdf8f3;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: #fdf8f3;
+    min-height: 100vh;
+  }
+  
+  .homepage-box {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    width: 100%;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  
+  .image-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .illustration {
+    max-width: 100%;
+    height: auto;
+    min-width: 280px;
+    max-height: 500px;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-box {
+    margin-top: 2rem;
+    padding: 1.2rem 1.5rem;
+    background-color: #fff7ee;
+    border-left: 4px solid #9376E0;
+    border-radius: 0.8rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    font-style: italic;
+    color: #444;
+    max-width: 100%;
+  }
+  
+  .quote-box blockquote {
+    margin: 0;
+  }
+  
+  .quote-box .author {
+    display: block;
+    margin-top: 0.6rem;
+    font-weight: bold;
+    font-style: normal;
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  .content-column {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  
+  .header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  
+
+  
+  .user-name {
+    margin: 0;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 500;
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+  }
+  
+  .welcome-title span {
+    color: #9376E0;
+  }
+  
+  .welcome-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.4rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card h2 {
+    font-size: 1.05rem;
+    margin-top: 0;
+    color: #444;
+  }
+  
+  .card p {
+    margin: 0.5rem 0 0;
+    color: #555;
+  }
+  
+  textarea {
+    width: 100%;
+    border: none;
+    background-color: #f3f0ea;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    resize: none;
+    font-size: 1rem;
+    color: #444;
+    min-height: 80px;
+  }
+  
+  .btn {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #9376E0;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+  .edit-profile-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #9376E0;
+    color: white;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #7b63c7;
+  }
+  .user-stats {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.3rem 0;
+  }
+  
