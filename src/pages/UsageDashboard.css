@@ -1,0 +1,37 @@
+.usage-wrapper {
+    background-color: #f9f4ef;
+    min-height: 100vh;
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .usage-box {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .usage-box h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .usage-box ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+  
+  .note {
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    color: #777;
+  }
+  

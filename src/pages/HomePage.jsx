@@ -91,7 +91,7 @@ const HomePage = () => {
             <textarea placeholder="Scrivi qui…">Un libro che sembra per bambini ma è un pugno allo stomaco per gli adulti.</textarea>
           </div>
 
-          <div className="card progress">
+          <div className="cardprogress">
             <h2>📊 Il tuo percorso</h2>
             <p>Libri letti questo mese: 3</p>
             <p>Emozioni associate: 🎯 riflessivo, 💭 nostalgico</p>

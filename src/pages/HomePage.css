@@ -1,176 +1,197 @@
-body {
-    margin: 0;
-    background-color: #fdf8f3;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .homepage-wrapper {
-    display: flex;
+.homepage-wrapper {
+  background-color: #f9f4ef;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage-box {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.image-column {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.quote-box {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}
+
+.quote-box blockquote {
+  margin: 0;
+}
+
+.quote-box .author {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.content-column {
+  flex: 2 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+  overflow: visible;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-stats {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.edit-profile-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #9376E0;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+  background-color: #7c63c7;
+}
+
+.welcome-text {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card {
+  background-color: #eeeaf3;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  resize: vertical;
+}
+
+.card button.btn {
+  margin-top: 0.5rem;
+  background-color: #9376E0;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.card button.btn:hover {
+  background-color: #7c63c7;
+}
+
+.card.progress {
+  background-color: #e9f7ef;
+  border: 2px solid #cde0d6;
+  width: 100%;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homepage-box {
     flex-direction: column;
     align-items: center;
-    padding: 4rem 2rem;
-    background-color: #fdf8f3;
-    min-height: 100vh;
   }
-  
-  .homepage-box {
-    display: flex;
-    flex-direction: row;
-    max-width: 1200px;
-    width: 100%;
-    gap: 3rem;
+
+  .header-row {
+    flex-direction: column;
     align-items: flex-start;
   }
-  
-  .image-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .illustration {
-    max-width: 100%;
-    height: auto;
-    min-width: 280px;
-    max-height: 500px;
-    border-radius: 1rem;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .quote-box {
-    margin-top: 2rem;
-    padding: 1.2rem 1.5rem;
-    background-color: #fff7ee;
-    border-left: 4px solid #9376E0;
-    border-radius: 0.8rem;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
-    font-style: italic;
-    color: #444;
-    max-width: 100%;
-  }
-  
-  .quote-box blockquote {
-    margin: 0;
-  }
-  
-  .quote-box .author {
-    display: block;
-    margin-top: 0.6rem;
-    font-weight: bold;
-    font-style: normal;
-    color: #666;
-    font-size: 0.95rem;
-  }
-  
-  .content-column {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
-  }
-  
-  .header-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    background-color: #fff;
-    padding: 0.6rem 1rem;
-    border-radius: 999px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  }
-  
 
-  
-  .user-name {
-    margin: 0;
-    font-size: 1rem;
-    color: #444;
-    font-weight: 500;
-  }
-  
-  .welcome-title {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 0.3rem;
-  }
-  
-  .welcome-title span {
-    color: #9376E0;
-  }
-  
-  .welcome-text {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 1rem;
-    padding: 1.4rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  }
-  
-  .card h2 {
-    font-size: 1.05rem;
-    margin-top: 0;
-    color: #444;
-  }
-  
-  .card p {
-    margin: 0.5rem 0 0;
-    color: #555;
-  }
-  
-  textarea {
+  .content-column {
+    flex: 1 1 100%;
     width: 100%;
-    border: none;
-    background-color: #f3f0ea;
-    padding: 1rem;
-    border-radius: 0.6rem;
-    resize: none;
-    font-size: 1rem;
-    color: #444;
-    min-height: 80px;
   }
-  
-  .btn {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    background-color: #9376E0;
-    color: white;
-    border: none;
-    border-radius: 0.6rem;
-    font-size: 0.95rem;
-    cursor: pointer;
+
+  .welcome-title {
+    font-size: 1.6rem;
   }
-  .edit-profile-btn {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #9376E0;
-    color: white;
-    border: none;
-    border-radius: 0.6rem;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background 0.2s ease;
+
+  .user-info {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .edit-profile-btn:hover {
-    background-color: #7b63c7;
+
+  .illustration {
+    max-width: 250px;
   }
-  .user-stats {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0.3rem 0;
+
+  .card {
+    width: 100%;
   }
+
+  .card.progress {
+    display: block;
+    width: 100%;
+    border: 2px solid #cde0d6;
+  }
+}
+
   

@@ -1,49 +1,88 @@
-.recommendations-wrapper {
-    background-color: #f9f4ef;
-    min-height: 100vh;
-    padding: 4rem 1rem;
-    display: flex;
-    justify-content: center;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  .recommendations-box {
-    max-width: 700px;
-    width: 100%;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  .recommendations-box h2 {
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .description {
-    margin-bottom: 2rem;
-    color: #555;
-  }
-  
-  .book-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .book-item {
-    background-color: #eeeaf3;
-    border-radius: 0.7rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .book-item h4 {
-    margin-bottom: 0.3rem;
-  }
-  
-  .no-recommendation {
-    font-style: italic;
-    color: #999;
-  }
+.recommend-wrapper {
+  background-color: #f9f4ef;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.recommend-box {
+  max-width: 750px;
+  width: 100%;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.recommend-box h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.description {
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filters select {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  background: #fff;
+}
+
+.book-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.book-item {
+  background-color: #eeeaf3;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-item h4 {
+  margin: 0 0 0.5rem 0;
+  color: #222;
+}
+
+.book-item p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.btn-read {
+  margin-top: 0.6rem;
+  padding: 0.5rem 1rem;
+  background-color: #9376E0;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn-read:hover {
+  background-color: #7c63c7;
+}
+
+.no-result {
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  margin-top: 2rem;
+}
   
