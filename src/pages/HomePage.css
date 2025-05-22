@@ -192,40 +192,41 @@
     width: 100%;
     border: 2px solid #cde0d6;
   }
-  @media (max-width: 480px) {
-    .welcome-title {
-      font-size: 1.3rem;
-      text-align: center;
+  @media (max-width: 768px) {
+    .homepage-box {
+      flex-direction: column !important;
+      align-items: stretch;
     }
   
-    .user-name,
-    .user-stats {
-      font-size: 0.95rem;
-      text-align: left;
+    .image-column,
+    .content-column {
+      width: 100% !important;
+      flex: none !important;
+      max-width: 100%;
     }
   
-    .edit-profile-btn {
+    .header-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .illustration {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  
+    .card,
+    .cardprogress {
       width: 100%;
-      text-align: center;
     }
   
-    .quote-box blockquote {
-      font-size: 0.9rem;
-      padding: 0 1rem;
-    }
-  
-    .card textarea {
-      font-size: 0.9rem;
-    }
-  
-    .card h2 {
-      font-size: 1.1rem;
-    }
-  
-    .card button.btn {
-      width: 100%;
+    .user-info {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
+  
+  
   
 }
 
