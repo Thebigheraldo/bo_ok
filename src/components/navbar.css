@@ -124,6 +124,30 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+  .navbar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .navbar-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #9376E0;
+    line-height: 1;
+  }
+  
+  .menu-icon {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 0.2rem;
+    line-height: 1;
+  }
+  
+  
+  
 
       
   

@@ -16,6 +16,7 @@ import Navbar from './components/Navbar';
 import AuthModal from './components/AuthModal';
 import PrivateRoute from './components/PrivateRoute'; // componente per proteggere le rotte
 import { useUser } from './context/UserContext';
+import WelcomeBeta from './pages/WelcomeBeta';
 
 function App() {
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -97,6 +98,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/welcome" element={<WelcomeBeta />} />
       </Routes>
 
       <AuthModal show={showAuthModal} handleClose={() => setShowAuthModal(false)} />

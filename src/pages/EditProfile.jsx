@@ -3,6 +3,8 @@ import { Container, Form, Button, Alert } from 'react-bootstrap';
 import { useUser } from '../context/UserContext';
 import { saveUserProfile, getUserProfile } from '../utils/firebaseHelpers';
 import './EditProfile.css';
+import { useNavigate } from 'react-router-dom';
+
 
 function EditProfile() {
   const { firebaseUser, currentUser, setCurrentUser } = useUser();
@@ -15,6 +17,8 @@ function EditProfile() {
   const [newGenre, setNewGenre] = useState('');
   const [newBook, setNewBook] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (firebaseUser) {
@@ -67,11 +71,17 @@ function EditProfile() {
       await saveUserProfile(firebaseUser.uid, profile);
       setCurrentUser(profile);
       setMessage('✅ Profilo aggiornato con successo!');
+  
+      // Aspetta 1 secondo prima del redirect
+      setTimeout(() => {
+        navigate('/');
+      }, 1000);
     } catch (err) {
       console.error(err);
       setMessage('❌ Errore durante il salvataggio del profilo.');
     }
   };
+  
 
   if (!firebaseUser) {
     return (

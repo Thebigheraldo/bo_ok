@@ -75,12 +75,6 @@
   flex-wrap: wrap;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-
 .user-name {
   font-weight: bold;
   font-size: 1rem;
@@ -145,19 +139,33 @@
   background-color: #7c63c7;
 }
 
-.card.progress {
-  background-color: #e9f7ef;
-  border: 2px solid #cde0d6;
+.cardprogress input,
+.cardprogress textarea {
   width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 0.5rem;
 }
 
-
+.cardprogress label {
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: block;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .homepage-box {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column !important;
+    align-items: stretch;
+  }
+
+  .image-column,
+  .content-column {
+    width: 100% !important;
+    flex: none !important;
+    max-width: 100%;
   }
 
   .header-row {
@@ -165,69 +173,124 @@
     align-items: flex-start;
   }
 
-  .content-column {
-    flex: 1 1 100%;
+  .illustration {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .card,
+  .cardprogress {
     width: 100%;
   }
 
   .welcome-title {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   .user-info {
     flex-direction: column;
     align-items: flex-start;
   }
+}
 
-  .illustration {
-    max-width: 250px;
+@media (max-width: 480px) {
+  .welcome-title {
+    font-size: 1.3rem;
+    text-align: center;
   }
 
-  .card {
+  .user-name,
+  .user-stats {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .edit-profile-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .quote-box blockquote {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .card textarea {
+    font-size: 0.9rem;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card button.btn {
     width: 100%;
   }
-
-  .card.progress {
-    display: block;
-    width: 100%;
-    border: 2px solid #cde0d6;
+  .btn.danger {
+    background-color: #e06b6b;
   }
-  @media (max-width: 768px) {
-    .homepage-box {
-      flex-direction: column !important;
-      align-items: stretch;
-    }
   
-    .image-column,
-    .content-column {
-      width: 100% !important;
-      flex: none !important;
-      max-width: 100%;
-    }
+  .btn.danger:hover {
+    background-color: #c85c5c;
+  }
+  .logo-container {
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #f9f4ef;
+    padding: 0.5rem 1rem;
+    z-index: 1000;
+  }
   
-    .header-row {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  .logo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9376E0;
+    margin: 0;
+    text-decoration: none;
+  }
   
-    .illustration {
-      max-width: 80%;
-      margin: 0 auto;
-    }
+  .menu-icon {
+    font-size: 1.4rem;
+    color: #555;
+    cursor: pointer;
+  }
+  .card.reading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   
-    .card,
-    .cardprogress {
-      width: 100%;
-    }
+  .card.reading input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+  }
   
-    .user-info {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  .reading-actions {
+    display: flex;
+    gap: 0.6rem;
+  }
+  
+  .reading-actions .btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
   }
   
   
   
 }
+
+  
+  
+  
+
 
   

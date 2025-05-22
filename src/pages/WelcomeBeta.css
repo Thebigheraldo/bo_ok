@@ -1,0 +1,16 @@
+.welcome-beta {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .welcome-beta h1 {
+    color: #9376E0;
+  }
+  
+  .welcome-beta ul {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
