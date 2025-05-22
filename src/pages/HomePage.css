@@ -192,6 +192,41 @@
     width: 100%;
     border: 2px solid #cde0d6;
   }
+  @media (max-width: 480px) {
+    .welcome-title {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  
+    .user-name,
+    .user-stats {
+      font-size: 0.95rem;
+      text-align: left;
+    }
+  
+    .edit-profile-btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .quote-box blockquote {
+      font-size: 0.9rem;
+      padding: 0 1rem;
+    }
+  
+    .card textarea {
+      font-size: 0.9rem;
+    }
+  
+    .card h2 {
+      font-size: 1.1rem;
+    }
+  
+    .card button.btn {
+      width: 100%;
+    }
+  }
+  
 }
 
   
